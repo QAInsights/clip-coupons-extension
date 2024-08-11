@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "ClipIt!",
+  "version": "1.0",
+  "description": "Clip the coupons swiftly!",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style/popup.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

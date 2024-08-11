@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropbtn {
+  display: inline-flex;
+  background-color: #0f52a2;
+  color: white;
+  padding: 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.dropbtn:hover {
+  background-color: #1e6dcc;
+}
+
+.info {
+  font-size: 12px;
+}
+
+.info__value {
+  font-weight: bold;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #01152e;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 6px;
+  padding: 16px;
+  position: fixed;
+  z-index: 99;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  z-index: 9999;
+}
+
+.toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  z-index: 9999;
+  top: 200px;
+  right: 120px;
+  font-weight: bolder;
+}
+/* 
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 20px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 20px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+} */
