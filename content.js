@@ -23,10 +23,10 @@ function isMaxClippedCouponsReached() {
       const nextElement = clippedCoupon.nextElementSibling;
       if (nextElement && nextElement.innerText === "200") {
         console.log(
-          "Maximum number of coupons clipped. Please unclip some coupons and try again."
+          "Maximum number of coupons already clipped. Please unclip some coupons and try again."
         );
         showToast(
-          "Maximum number of coupons clipped. Please unclip some coupons and try again.",
+          "Maximum number of coupons already clipped. Please unclip some coupons and try again.",
           1000
         );
         return true;
@@ -44,10 +44,14 @@ function checkUrlAndUrlPath(url) {
     return true;
   }
 
+  showToast(
+    "Please navigate to the Savings or Coupons page and try again.",
+    1000
+  );
+
   return false;
 }
 
-const maxCouponsToClip = 25;
 let counter = 0;
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -64,6 +68,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       if (!isMaxClippedCouponsReached()) {
         // Clip all the coupons
         const coupons = document.querySelectorAll("button");
+
+        // Set the maxCouponsToClip variable to the value passed from the background script
+        let maxCouponsToClip = request.maxCouponsToClip;
+
+        console.log("maxCouponsToClip:", maxCouponsToClip);
 
         // Loop through the maximum number of coupons to clip
         coupons.forEach((coupon) => {
@@ -142,7 +151,7 @@ function showToast(message, timeOut) {
     toast.className = "toast show";
   }, timeOut);
 
-  // Hide the toast after 3 seconds
+  // Hide the toast after 3.5 seconds
   setTimeout(() => {
     toast.className = toast.className.replace("show", "");
     // Remove the toast from the DOM

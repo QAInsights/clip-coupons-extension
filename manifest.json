@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "ClipIt!",
+  "name": "Clip It!",
   "version": "1.0",
   "description": "Clip the coupons swiftly!",
   "permissions": ["activeTab", "storage"],
@@ -9,12 +9,18 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://*.kroger.com/*"],
       "js": ["content.js"],
       "css": ["style/popup.css"]
     }
   ],
   "background": {
     "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   }
 }

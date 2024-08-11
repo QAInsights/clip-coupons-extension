@@ -12,19 +12,13 @@
       <button type="button" class="dropbtn" id="unclipped">
         Unclip Coupons
       </button>
-      <!-- <label for="rangeInput">Max Coupons to clip</label>
-      <input type="range" id="rangeInput" min="1" max="200" value="20" />
-      <span id="currentValue"></span> -->
     </nav>
-    <p class="info">
-      Maximum number of coupons to clip at a time:
-      <span class="info__value">25</span>
-    </p>
 
-    <p class="info">
-      Maximum number of coupons to clip:
-      <span class="info__value">200 </span>
-    </p>
+    <div class="container">
+      <label for="rangeInput" class="info">Max coupons to clip</label>
+      <input type="range" id="rangeInput" min="1" max="200" value="25" />
+      <span class="info__value" id="currentValue">1</span>
+    </div>
 
     <script src="popup.js"></script>
   </body>
