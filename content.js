@@ -134,6 +134,33 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       }
     }
   }
+
+  // Clip only free coupons button
+  if (request.action === "clipFreeIt") {
+    // Check if the URL contains kroger.com
+    const url = new URL(window.location.href);
+    if (checkUrlAndUrlPath(url)) {
+      // Execute the function
+      if (isUserLoggedIn()) {
+        // Clip all the free coupons
+        const buttons = Array.from(document.querySelectorAll("button")).filter(
+          (button) => {
+            const ariaLabel = button.getAttribute("aria-label");
+            return ariaLabel && /\bfree\b/i.test(ariaLabel);
+          }
+        );
+
+        buttons.forEach((button) => {
+          if (button.innerText === "Clip") {
+            // Add a delay of 500 milliseconds
+            setTimeout(() => {
+              button.click();
+            }, 1000);
+          }
+        });
+      }
+    }
+  }
   return;
 });
 

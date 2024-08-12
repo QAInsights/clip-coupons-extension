@@ -49,6 +49,34 @@ body {
   z-index: 9999;
 }
 
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+.footer button,
+a {
+  background-color: white;
+  color: #1e6dcc;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.footer button:hover {
+  background-color: #1e6dcc;
+  color: white;
+}
+
+.footer a {
+  color: #1e6dcc;
+  text-decoration: none;
+}
+
 .toast.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;

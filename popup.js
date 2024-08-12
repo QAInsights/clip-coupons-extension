@@ -70,6 +70,33 @@ document.addEventListener("DOMContentLoaded", function () {
       window.close();
     });
   }
+
+  // Clip only free coupons button
+  const clippedFreeButton = document.getElementById("clippedFree");
+  if (clippedFreeButton) {
+    clippedFreeButton.addEventListener("click", function () {
+      console.log("clippedFreeButton clicked");
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs
+          .sendMessage(tabs[0].id, {
+            action: "clipFreeIt",
+          })
+          .then((response) => {
+            if (response && response.status) {
+              console.log(response.status);
+              console.log("Received response:", response);
+            } else {
+              console.log("No status received.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+      // Close the popup
+      window.close();
+    });
+  }
 });
 
 // Update the maxCouponsToClip value when the range input is changed
