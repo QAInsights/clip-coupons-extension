@@ -43,7 +43,6 @@ function checkUrlAndUrlPath(url) {
   ) {
     return true;
   }
-
   showToast(
     "Please navigate to the Savings or Coupons page and try again.",
     1000
@@ -83,7 +82,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
           if (coupon.innerText === "Clip") {
             // Increment the counter
             counter++;
-            // Add a delay of 500 milliseconds
             setTimeout(() => {
               coupon.click();
               // Check for the coupons clipped or not
@@ -116,7 +114,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
         coupons.forEach((coupon) => {
           if (coupon.innerText === "Unclip") {
-            // Add a delay of 500 milliseconds
             setTimeout(() => {
               console.log("Delayed unclipping");
               coupon.click();
@@ -140,7 +137,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     // Check if the URL contains kroger.com
     const url = new URL(window.location.href);
     if (checkUrlAndUrlPath(url)) {
-      // Execute the function
       if (isUserLoggedIn()) {
         // Clip all the free coupons
         const buttons = Array.from(document.querySelectorAll("button")).filter(
