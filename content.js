@@ -94,6 +94,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             }, 1000);
           }
         });
+
+        chrome.runtime.sendMessage({
+          action: "setBadgeText",
+          text: maxCouponsToClip.toString(),
+        });
       }
 
       counter = 0;
