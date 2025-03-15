@@ -97,11 +97,38 @@ document.addEventListener("DOMContentLoaded", function () {
       window.close();
     });
   }
+
+  // Update the maxCouponsToClip value when the range input changes
+  const rangeInput = document.getElementById("rangeInput");
+  if (rangeInput) {
+    rangeInput.addEventListener("input", function () {
+      document.getElementById("currentValue").innerText = this.value;
+      chrome.storage.local.set({ maxCouponsToClip: parseInt(this.value) });
+    });
+  }
 });
 
-// Update the maxCouponsToClip value when the range input is changed
-document.getElementById("rangeInput").addEventListener("input", function () {
-  const maxCouponsToClip = document.getElementById("rangeInput").value;
-  document.getElementById("currentValue").innerText = maxCouponsToClip;
-  chrome.storage.local.set({ maxCouponsToClip: maxCouponsToClip });
-});
+// Function to initialize the popup with stored values
+function initializePopup() {
+  chrome.storage.local.get("maxCouponsToClip", function (result) {
+    if (result.maxCouponsToClip) {
+      const currentValueElement = document.getElementById("currentValue");
+      const rangeInputElement = document.getElementById("rangeInput");
+      
+      if (currentValueElement) {
+        currentValueElement.innerText = result.maxCouponsToClip;
+      }
+      
+      if (rangeInputElement) {
+        rangeInputElement.value = result.maxCouponsToClip;
+      }
+    }
+  });
+}
+
+// Export functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    initializePopup
+  };
+}

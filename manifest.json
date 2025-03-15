@@ -9,7 +9,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.kroger.com/*"],
+      "matches": [
+        "https://*.kroger.com/*", 
+        "https://*.kingsoopers.com/*", 
+        "https://*.citymarket.com/*", 
+        "https://*.smithsfoodanddrug.com/*"
+      ],
       "js": ["content.js"],
       "css": ["style/popup.css"]
     }

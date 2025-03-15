@@ -38,7 +38,10 @@ function isMaxClippedCouponsReached() {
 
 function checkUrlAndUrlPath(url) {
   if (
-    url.origin.includes("kroger.com") &&
+    (url.origin.includes("kroger.com") || 
+     url.origin.includes("kingsoopers.com") || 
+     url.origin.includes("citymarket.com") || 
+     url.origin.includes("smithsfoodanddrug.com")) &&
     (url.pathname.includes("savings") || url.pathname.includes("coupons"))
   ) {
     return true;
@@ -58,7 +61,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log("Received clipIt action");
     const url = new URL(window.location.href);
 
-    if (checkUrlAndUrlPath(url)) {
+    if (checkUrlAndUrlPath(url)) {  
       // Check if the user is logged in
       if (!isUserLoggedIn()) {
         showToast("Please sign in to clip coupons.", 1000);
@@ -187,4 +190,14 @@ function showToast(message, timeOut) {
       document.body.removeChild(toast);
     }, timeOut);
   }, 3500);
+}
+
+// Export functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    isUserLoggedIn,
+    isMaxClippedCouponsReached,
+    checkUrlAndUrlPath,
+    showToast
+  };
 }

@@ -3,103 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Extension Help</title>
+    <title>Clip It! - Help</title>
     <link rel="stylesheet" href="../style/help.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <div class="container">
       <div class="content">
-        <h1>📋 Clip It! - Extension Help</h1>
+        <header>
+          <h1><i class="fas fa-clipboard-check"></i> Clip It! - Extension Help</h1>
+          <p class="subtitle">Save time and clip coupons automatically</p>
+        </header>
 
         <div class="tab">
           <button class="tablinks" data-tab="HowToUse" id="defaultOpen">
-            How to Use
+            <i class="fas fa-info-circle"></i> How to Use
           </button>
-          <button class="tablinks" data-tab="Features">Features</button>
+          <button class="tablinks" data-tab="Features">
+            <i class="fas fa-star"></i> Features
+          </button>
           <button class="tablinks" data-tab="Troubleshooting">
-            Troubleshooting
+            <i class="fas fa-wrench"></i> Troubleshooting
           </button>
         </div>
 
         <div id="HowToUse" class="tabcontent">
-          <p>Login into your Kroger account.</p>
-          <p>
-            Navigate to
-            <mark>Kroger.com > Savings > Digital Coupons</mark> page.
-          </p>
-          <img
-            src="../img/kroger-savings.png"
-            alt="Kroger Savings"
-            class="src"
-          />
-          <p>
-            Click on <mark>Clip It! extension > Clip Coupons</mark> to clip the
-            coupons to your account.
-          </p>
-          <img src="../img/clip-coupons.png" alt="Clip Coupons" class="src" />
-          <p>
-            To configure the maximum number of coupons to be clipped, change the
-            <mark>Max coupons to clip</mark> slider to the desired number.
-          </p>
-          <p>Clip It! also supports:</p>
-          <ul class="info">
-            <li>🤑 Clip only the FREE coupons - an experimental feature</li>
-            <li>🖇️ Unclip all the coupons</li>
-          </ul>
+          <div class="card">
+            <h2><i class="fas fa-sign-in-alt"></i> Step 1: Login</h2>
+            <p>Login to your account on any of the supported websites:</p>
+            <ul class="supported-sites">
+              <li><i class="fas fa-shopping-cart"></i> <a href="https://www.kroger.com" target="_blank">Kroger.com</a></li>
+              <li><i class="fas fa-shopping-cart"></i> <a href="https://www.kingsoopers.com" target="_blank">KingSoopers.com</a></li>
+              <li><i class="fas fa-shopping-cart"></i> <a href="https://www.citymarket.com" target="_blank">CityMarket.com</a></li>
+              <li><i class="fas fa-shopping-cart"></i> <a href="https://www.smithsfoodanddrug.com" target="_blank">SmithsFoodAndDrug.com</a></li>
+            </ul>
+          </div>
 
-          <p>Here is the quick demo:</p>
-          <iframe
-            width="600"
-            height="600"
-            src="https://www.youtube.com/embed/Y3mBXwzF99k?si=tSz2nLHkxtRFHWKQ"
-            title="Clip It! - How to Use"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+          <div class="card">
+            <h2><i class="fas fa-map-signs"></i> Step 2: Navigate to Coupons</h2>
+            <p>
+              Navigate to the <span class="highlight">Savings > Digital Coupons</span> page on any of the supported websites.
+            </p>
+            <div class="image-container">
+              <img
+                src="../img/kroger-savings.png"
+                alt="Kroger Savings"
+                class="screenshot"
+              />
+            </div>
+          </div>
+
+          <div class="card">
+            <h2><i class="fas fa-mouse-pointer"></i> Step 3: Use the Extension</h2>
+            <p>
+              Click on the <span class="highlight">Clip It! extension</span> icon and select an action:
+            </p>
+            <ul class="action-list">
+              <li><i class="fas fa-cut"></i> <strong>Clip Coupons</strong> - Clips coupons up to your set maximum</li>
+              <li><i class="fas fa-gift"></i> <strong>Clip FREE Coupons</strong> - Only clips coupons marked as FREE</li>
+              <li><i class="fas fa-undo"></i> <strong>Unclip All</strong> - Removes all clipped coupons</li>
+            </ul>
+            <div class="image-container">
+              <img src="../img/clip-coupons.png" alt="Clip Coupons" class="screenshot" />
+            </div>
+          </div>
+
+          <div class="card">
+            <h2><i class="fas fa-sliders-h"></i> Step 4: Configure Settings</h2>
+            <p>
+              To configure the maximum number of coupons to be clipped, adjust the
+              <span class="highlight">Max coupons to clip</span> slider to your desired number.
+            </p>
+            <div class="tip">
+              <i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Setting a lower number (20-30) improves performance.
+            </div>
+          </div>
+
+          <div class="card">
+            <h2><i class="fas fa-play-circle"></i> Video Tutorial</h2>
+            <p>Here is a quick demonstration of how to use Clip It!:</p>
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/Y3mBXwzF99k?si=tSz2nLHkxtRFHWKQ"
+                title="Clip It! - How to Use"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
 
         <div id="Features" class="tabcontent">
-          <p class="info">Here are some of the features of the extension:</p>
-          <ul class="info">
-            <li>✨Number of coupons to be clipped customization</li>
-            <li>✨Free coupons clipping</li>
-            <li>✨Clip and unclip coupons</li>
-          </ul>
+          <div class="card">
+            <h2><i class="fas fa-rocket"></i> Key Features</h2>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <i class="fas fa-sliders-h feature-icon"></i>
+                <h3>Customizable Clipping</h3>
+                <p>Set the exact number of coupons you want to clip</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-gift feature-icon"></i>
+                <h3>Free Coupon Finder</h3>
+                <p>Automatically find and clip only free coupons</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-undo feature-icon"></i>
+                <h3>Bulk Unclipping</h3>
+                <p>Remove all clipped coupons with one click</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-store feature-icon"></i>
+                <h3>Multiple Stores</h3>
+                <p>Works with Kroger, King Soopers, City Market, and Smith's Food & Drug</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="Troubleshooting" class="tabcontent">
-          <p class="info">If you encounter any issues, try the following:</p>
-          <ol class="info">
-            <li>🔃 Refresh the page</li>
-            <li>✅ Disable and re-enable the extension</li>
-            <li>🗑️ Clear your browser cache</li>
-          </ol>
-
-          <p class="info">
-            🔖 Configure the maximum number of coupons to be clipped to lower
-            number for better performance e.g. 20 or 30.
-          </p>
+          <div class="card">
+            <h2><i class="fas fa-bug"></i> Common Issues & Solutions</h2>
+            <div class="troubleshooting-item">
+              <h3><i class="fas fa-exclamation-triangle"></i> Extension Not Working</h3>
+              <ol class="solution-steps">
+                <li><i class="fas fa-sync"></i> Refresh the page</li>
+                <li><i class="fas fa-power-off"></i> Disable and re-enable the extension</li>
+                <li><i class="fas fa-trash"></i> Clear your browser cache</li>
+              </ol>
+            </div>
+            
+            <div class="troubleshooting-item">
+              <h3><i class="fas fa-exclamation-triangle"></i> Slow Performance</h3>
+              <p>If the extension is running slowly:</p>
+              <div class="tip">
+                <i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Configure the maximum number of coupons to a lower value (20-30) for better performance.
+              </div>
+            </div>
+            
+            <div class="troubleshooting-item">
+              <h3><i class="fas fa-exclamation-triangle"></i> Not All Coupons Clipped</h3>
+              <p>If not all coupons are being clipped:</p>
+              <ul class="solution-steps">
+                <li><i class="fas fa-check-circle"></i> Verify you're logged in to your account</li>
+                <li><i class="fas fa-check-circle"></i> Check if you've reached the maximum coupon limit (200)</li>
+                <li><i class="fas fa-check-circle"></i> Try running the extension again</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="footer">
-      <p>
-        Made with ❤️ by
-        <a href="https://github.com/qainsights">NaveenKumar Namachivayam</a> |
-        🍀
-        <a href="https://www.buymeacoffee.com/qainsights">Donate to support</a>
-      </p>
-
-      <p class="info__disclaimer">
-        👉 Disclaimer: Clip It! is not affiliated with or endorsed by Kroger or
-        any affiliated company. Use of this extension at your own risk. The
-        author is not responsible for any damages or losses incurred as a result
-        of using this extension.
-      </p>
-    </div>
+    <footer>
+      <div class="footer-content">
+        <p>
+          <i class="fas fa-heart"></i> Made with love by
+          <a href="https://github.com/qainsights">NaveenKumar Namachivayam</a>
+        </p>
+        <p>
+          <i class="fas fa-coffee"></i>
+          <a href="https://www.buymeacoffee.com/qainsights">Support the developer</a>
+        </p>
+      </div>
+      <div class="disclaimer">
+        <p>
+          <i class="fas fa-info-circle"></i> Disclaimer: Clip It! is not affiliated with or endorsed by Kroger, King Soopers, City Market, Smith's Food & Drug, or any affiliated company. Use of this extension at your own risk. The author is not responsible for any damages or losses incurred as a result of using this extension.
+        </p>
+      </div>
+    </footer>
 
     <script src="help.js"></script>
   </body>

@@ -1,10 +1,10 @@
 # Privacy Policy for Clip It! Extension
 
 ## Introduction
-This Privacy Policy outlines how Clip It! (the "Extension") collects, uses, and protects any information that you provide while using this Extension. Our primary goal is to enhance your user experience by offering efficient coupon clipping  while ensuring your privacy and data protection.
+This Privacy Policy outlines how Clip It! (the "Extension") collects, uses, and protects any information that you provide while using this Extension. Our primary goal is to enhance your user experience by offering efficient coupon clipping while ensuring your privacy and data protection.
 
 ## Information Collection and Use
-User-Provided Information: The Extension does not require you to create an account or provide any personal information. It operates based on your interactions with the Kroger website.
+User-Provided Information: The Extension does not require you to create an account or provide any personal information. It operates based on your interactions with the Kroger and its subsidiaries websites.
 
 ## Data Storage
 The Extension uses browser storage to save your coupon clipping preferences and settings. This data is stored locally on your device and is not transmitted to any servers.
