@@ -1,10 +1,11 @@
 {
   "name": "clip-it-extension",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "Clip the coupons swiftly!",
   "main": "background.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "mkdir -p dist && cp -r manifest.json background.js content.js popup.html popup.js icon.png icon.svg style img dist/ && cd dist && zip -r ../clip-it-extension.zip *"
   },
   "author": "NaveenKumar Namachivayam",
   "license": "MIT",
